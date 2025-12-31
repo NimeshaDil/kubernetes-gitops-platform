@@ -14,28 +14,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  trivy-scan-sarif:
+  trivy-scan:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run Trivy FS scan with SARIF
-        id: trivy
+      - name: Run Trivy FS scan
         uses: aquasecurity/trivy-action@0.20.0
         with:
           scan-type: fs
-          format: sarif
-          output: trivy-results.sarif
           scanners: vuln,secret,misconfig
           severity: CRITICAL,HIGH
           ignore-unfixed: true
-          scan-ref: |
-            apps/frontend
-            apps/backend
+          format: sarif
+          output: trivy-results.sarif
+          scan-ref: apps/frontend apps/backend
 
-      - name: Upload SARIF to GitHub
+      - name: Upload SARIF to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: trivy-results.sarif
