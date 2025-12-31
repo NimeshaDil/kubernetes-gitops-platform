@@ -67,11 +67,4 @@ gitops/
 - **YAML parse errors:**
   - The script will report files with YAML syntax issues.
 
-## Extending
-- You can modify the script to support additional templating options, output formats, or integrate with CI/CD pipelines.
 
-## License
-MIT License
-
-## Author
-[Your Name]
