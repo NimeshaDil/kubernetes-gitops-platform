@@ -33,7 +33,7 @@ jobs:
           context: ./apps/frontend
           file: ./apps/frontend/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/frontend:latest
+          tags: ghcr.io/nimeshadil/frontend:latest
 
       - name: Build and push backend image
         uses: docker/build-push-action@v5
@@ -41,4 +41,4 @@ jobs:
           context: ./apps/backend
           file: ./apps/backend/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/backend:latest
+          tags: ghcr.io/nimeshadil/backend:latest
