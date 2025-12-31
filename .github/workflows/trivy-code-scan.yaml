@@ -36,7 +36,6 @@ jobs:
           format: sarif
           output: trivy-code-results.sarif
           scan-ref: apps/frontend
-        continue-on-error: true
 
       - name: Run Trivy code scan (backend)
         uses: aquasecurity/trivy-action@0.20.0
@@ -48,7 +47,6 @@ jobs:
           format: sarif
           output: trivy-code-results-backend.sarif
           scan-ref: apps/backend
-        continue-on-error: true
 
       - name: Upload SARIF to GitHub Security (frontend)
         uses: github/codeql-action/upload-sarif@v3
