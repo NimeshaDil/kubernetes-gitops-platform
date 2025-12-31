@@ -8,12 +8,12 @@ on:
 #     paths:
 #       - "apps/frontend/**"
 #       - "apps/backend/**"
-#   pull_request:
-#     branches:
-#       - main
-#     paths:
-#       - "apps/frontend/**"
-#       - "apps/backend/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "apps/frontend/**"
+      - "apps/backend/**"
 
 jobs:
   trivy-code-scan:
