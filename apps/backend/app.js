@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
+const RateLimit = require('express-rate-limit');
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,11 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
+const feedbackLimiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 feedback submissions per windowMs
+});
+
 // API to get all feedback
 app.get('/feedback', async (req, res) => {
   const result = await pool.query('SELECT * FROM feedback ORDER BY id DESC');
@@ -21,7 +27,7 @@ app.get('/feedback', async (req, res) => {
 });
 
 // API to submit feedback
-app.post('/feedback', async (req, res) => {
+app.post('/feedback', feedbackLimiter, async (req, res) => {
   const { name, message } = req.body;
   await pool.query('INSERT INTO feedback(name, message) VALUES($1, $2)', [name, message]);
   res.json({ status: 'success' });
