@@ -56,12 +56,18 @@ An end-to-end GitOps platform template for Kubernetes, designed to showcase best
 - Store all manifests and Helm values as the single source of truth.
 - Deploy to Kubernetes cluster using Helm.
 
+
+
 ## Project Highlights
 
-- **Best Practices**: Clean code, modular structure, and clear separation of concerns.
-- **Automation**: Python script for Helm manifest generation.
-- **Extensibility**: Easily add new services or environments.
-- **Showcase Ready**: Ideal for demonstrating DevOps, GitOps, and cloud-native skills on your GitHub profile.
+- **Kubernetes Orchestration**: Leverages Kubernetes for deployment, scaling, and management of containerized applications, ensuring high availability and resilience.
+- **Helm Templating**: Uses Helm charts for parameterized, reusable, and environment-specific Kubernetes resource definitions.
+- **CI/CD Best Practices**: Follows industry standards for automated testing, linting, and deployment, with clear separation of build, test, and deploy stages.
+- **Containerization**: All services are containerized using Docker, enabling consistent environments from development to production and simplifying deployment to Kubernetes.
+- **Code Security Scanning**: Integrates code security scanning tools and practices to ensure vulnerabilities are detected early in the pipeline.
+- **Automation**: Python script for Helm manifest generation and GitOps workflows.
+- **Extensibility**: Easily add new micro-services or environments.
+
 
 ---
 
