@@ -53,11 +53,8 @@ An end-to-end GitOps platform template for Kubernetes, designed to showcase best
 ### GitOps Workflow
 
 - Use the generator in `ci-cd/generator/` to create/update Kubernetes manifests.
-- Store all manifests and Helm values in `helmfiles/`.
-- Deploy to your Kubernetes cluster using Helm:
-  ```sh
-  helm upgrade --install my-app ./helmfiles/dev
-  ```
+- Store all manifests and Helm values as the single source of truth.
+- Deploy to Kubernetes cluster using Helm.
 
 ## Project Highlights
 
