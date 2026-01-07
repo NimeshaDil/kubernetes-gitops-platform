@@ -35,8 +35,8 @@ jobs:
 
       - name: Push backend chart to GHCR
         run: |
-          helm push packaged/backend-*.tgz oci://ghcr.io/${{ github.repository_owner }}/{{ github.event.repository.name }}
+          helm push packaged/backend-*.tgz oci://ghcr.io/nimeshadil/{{ github.event.repository.name }}
 
       - name: Push frontend chart to GHCR
         run: |
-          helm push packaged/frontend-*.tgz oci://ghcr.io/${{ github.repository_owner }}/{{ github.event.repository.name }}
+          helm push packaged/frontend-*.tgz oci://ghcr.io/nimeshadil/{{ github.event.repository.name }}
