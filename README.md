@@ -54,6 +54,7 @@ An end-to-end GitOps platform template for Kubernetes, designed to showcase best
 
 - Use the generator in `ci-cd/generator/` to create/update Kubernetes manifests.
 - Store all manifests and Helm values as the single source of truth.
+- Docker images and Helm Packages are uploaded to GitHub Container Registry using GitHub Actions.
 - Deploy to Kubernetes cluster using Helm.
 
 
