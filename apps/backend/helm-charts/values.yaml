@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: ghcr.io/nimeshadil/backend
+  tag: latest
+service:
+  type: ClusterIP
+  port: 3000
+resources: {}
