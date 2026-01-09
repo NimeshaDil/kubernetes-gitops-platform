@@ -1,0 +1,23 @@
+---
+filepath: ""
+environments:
+  default:
+    values:
+      - values.yaml
+---
+namespace: dev-namespace
+releases:
+  - name: backend
+    chart: ../../apps/backend/helm-charts
+    version: 0.1.0
+    installed: true
+    values:
+      - values.yaml
+  - name: frontend
+    chart: ../../apps/frontend/helm-charts
+    version: 0.1.0
+    installed: true
+    values:
+      - values.yaml
+templates: {}
+renderedvalues: {}
